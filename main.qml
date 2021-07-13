@@ -15,6 +15,8 @@ Window {
     Background {
         id: background
         anchors.fill: parent
+        target: sender //ustawiamy target tak, aby wskazywało obiekt klasy Circle z id: sender
+
         //w którym umieszczamy utworzony przez nas przycisk Sender
         Sender {
             id: sender
@@ -48,12 +50,14 @@ Window {
             buttonColor: "#ff0000"
             //ustawiamy tekst przycisku
             displayText: "Receiver"
+            //ustawiamy szerokoć zależną od kliknięcia, tak jak w sender
+            width: sender.width
         }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:2}D{i:1}
+    D{i:0;formeditorZoom:0.75}D{i:1}
 }
 ##^##*/
