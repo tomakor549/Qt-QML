@@ -15,49 +15,54 @@ Window {
     Background {
         id: background
         anchors.fill: parent
-        target: sender //ustawiamy target tak, aby wskazywało obiekt klasy Circle z id: sender
 
-        //w którym umieszczamy utworzony przez nas przycisk Sender
-        Sender {
-            id: sender
-            y: 152
+        //w którym umieszczamy utworzone przez nas przyciski SendAndReceive
+        SendAndReceive {
+            id: sendAndReceive0
+            y: 376
+            width: 200
+            height: 100
             //wycentrowanie pionowe
-            anchors.verticalCenter: parent.verticalCenter
             //wstawienie zależnoci od lewej krawędzi Background - nie okna!
             anchors.left: parent.left
+            anchors.bottom: parent.bottom
             //w odległoći 50px od lewej krawędzi - anchors.left powyżej
             anchors.leftMargin: 50
             //ustawiamy utworzony w Sender licznik na 0
             counter: 0
             //ustawiamy tekst przycisku
-            displayText: "Sender"
+            displayText: "Send"
             //ustawiamy kolor przycisku
             buttonColor: "#0000ff"
-            //jako traget ustawiamy Receiver o podanym id - tu zadeklarowany poniżej
-            target: receiver
+            //jako traget ustawiamy SendAndReceive o podanym id
+            target: sendAndReceive1
         }
-        //i utworzony przez nas przycisk Receiver
-        Receiver {
-            id: receiver
+        //a jako target podajemy sobie je nazwzajem w celu dwustronnej komunikacji
+        SendAndReceive {
+            id: sendAndReceive1
             y: 152
+            width: 200
+            height: 100
             //wycentrowanie pionowe
-            anchors.verticalCenter: parent.verticalCenter
             //wstawienie zależnoci od prawej krawędzi Background - nie okna!
             anchors.right: parent.right
+            anchors.bottom: parent.bottom
             //w odległoći 50px od prawej krawędzi - anchors.right powyżej
             anchors.rightMargin: 50
+            //ustawiamy utworzony w Sender licznik na 0
+            counter: 0
             //ustawiamy kolor przycisku
             buttonColor: "#ff0000"
             //ustawiamy tekst przycisku
-            displayText: "Receiver"
-            //ustawiamy szerokoć zależną od kliknięcia, tak jak w sender
-            width: sender.width
+            displayText: "Receive"
+            //jako traget ustawiamy SendAndReceive o podanym id
+            target: sendAndReceive0
         }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:1}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/

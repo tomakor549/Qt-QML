@@ -29,14 +29,13 @@ Circle {
             //kolor finalny - jaki osiągnie na koniec
             to: "red"
             //czas trwania zmiany koloru w ms. domylnie jest 250
-            duration: 2500
+            duration: 250
         }
         //kolejna zmiana koloru w animacji, rozpoczynająca się po zakończeniu poprzedniej
         ColorAnimation {
             from: "red"
             to: "aqua"
-            duration: 2500
+            duration: 250
         }
     }
-
 }
